@@ -1,11 +1,11 @@
-About r-hydrotsm
-================
+About r-hydrotsm-feedstock
+==========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-hydrotsm-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/hzambran/hydroTSM
 
 Package license: GPL-2.0-or-later
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-hydrotsm-feedstock/blob/main/LICENSE.txt)
 
 Summary: S3 functions for management, analysis, interpolation and plotting of time series used in hydrology and related environmental sciences. In particular, this package is highly oriented to hydrological modelling tasks. The focus of this package has been put in providing a collection of tools useful for the daily work of hydrologists (although an effort was made to optimise each function as much as possible, functionality has had priority over speed). Bugs / comments / questions / collaboration of any kind are very welcomed, and in particular, datasets that can be included in this package for academic purposes.
 
