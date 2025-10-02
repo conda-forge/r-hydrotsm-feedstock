@@ -12,7 +12,7 @@ source:
   sha256: 06d28a12141e02316c71d1b88e56a64d3070ae88fed1915252ca2e6a884b563d
 
 build:
-  number: 0
+  number: 1
   noarch: generic
   rpaths:
     - lib/R/lib/
@@ -28,7 +28,6 @@ requirements:
     - r-e1071
     - r-gstat
     - r-lattice
-    - r-maptools
     - r-sp >=1.1_0
     - r-xts >=0.9_7
     - r-zoo >=1.7_2
@@ -38,7 +37,6 @@ requirements:
     - r-e1071
     - r-gstat
     - r-lattice
-    - r-maptools
     - r-sp >=1.1_0
     - r-xts >=0.9_7
     - r-zoo >=1.7_2
