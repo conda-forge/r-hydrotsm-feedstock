@@ -28,7 +28,6 @@ requirements:
     - r-e1071
     - r-gstat
     - r-lattice
-    - r-maptools
     - r-sp >=1.1_0
     - r-xts >=0.9_7
     - r-zoo >=1.7_2
@@ -38,7 +37,6 @@ requirements:
     - r-e1071
     - r-gstat
     - r-lattice
-    - r-maptools
     - r-sp >=1.1_0
     - r-xts >=0.9_7
     - r-zoo >=1.7_2
