@@ -1,22 +1,26 @@
-{% set version = "0.7-0.1" %}
+{% set version = "0.8-6" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
   name: r-hydrotsm
-  version: {{ version|replace("-", "_") }}
+  version: "{{ version|replace("-", "_") }}"
 
 source:
   url:
     - {{ cran_mirror }}/src/contrib/hydroTSM_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/hydroTSM/hydroTSM_{{ version }}.tar.gz
-  sha256: 06d28a12141e02316c71d1b88e56a64d3070ae88fed1915252ca2e6a884b563d
+  sha256: 2b72dffd97b275e8a9cd119f23ac4ac554cd77006b453f082a2f0b39131e89cc
 
 build:
-  number: 1
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
     - lib/
+  missing_dso_whitelist:
+    - '*/R.dll'        # [win]
+    - '*/Rblas.dll'    # [win]
+    - '*/Rlapack.dll'  # [win]
 
 requirements:
   build:
@@ -24,20 +28,18 @@ requirements:
     - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base
-    - r-automap
+    - r-classint
     - r-e1071
-    - r-gstat
     - r-lattice
-    - r-sp >=1.1_0
+    - r-timechange
     - r-xts >=0.9_7
     - r-zoo >=1.7_2
   run:
     - r-base
-    - r-automap
+    - r-classint
     - r-e1071
-    - r-gstat
     - r-lattice
-    - r-sp >=1.1_0
+    - r-timechange
     - r-xts >=0.9_7
     - r-zoo >=1.7_2
 
@@ -48,9 +50,10 @@ test:
 
 about:
   home: https://github.com/hzambran/hydroTSM
+  dev_url: https://github.com/hzambran/hydroTSM
   license: GPL-2.0-or-later
-  summary: S3 functions for management, analysis, interpolation and plotting of time series used in hydrology and related environmental sciences. In particular, this package is highly oriented to hydrological modelling tasks. The focus of this package has been put in providing a collection of tools useful for the daily work
-    of hydrologists (although an effort was made to optimise each function as much as possible, functionality has had priority over speed). Bugs / comments / questions / collaboration of any kind are very welcomed, and in particular, datasets that can be included in this package for academic purposes.
+  summary: S3 functions for management, analysis, interpolation and plotting of time series used in hydrology and related environmental sciences. In particular, this package is highly oriented to hydrological modelling tasks. The focus of this package has been put in providing a collection of tools useful for the daily
+    work of hydrologists (although an effort was made to optimise each function as much as possible, functionality has had priority over speed). Bugs / comments / questions / collaboration of any kind are very welcomed, and in particular, datasets that can be included in this package for academic purposes.
   license_family: GPL2
   license_file:
     - '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
